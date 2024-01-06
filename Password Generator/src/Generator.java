@@ -78,6 +78,9 @@ public class Generator {
     }
 
     private void requestPassword() {
+        // Violates Single Responsibility Principle
+        // This method handles both user input and password generation.
+        // Should be split into separate classes or methods.
         boolean IncludeUpper = false;
         boolean IncludeLower = false;
         boolean IncludeNum = false;
@@ -135,6 +138,9 @@ public class Generator {
         } while (correctParams);
 
         System.out.println("Great! Now enter the length of the password");
+        // Violates Dependency Inversion Principle
+        // The Generator class should not instantiate another Generator.
+        // It should rely on abstraction or interfaces.
         int length = keyboard.nextInt();
 
         final Generator generator = new Generator(IncludeUpper, IncludeLower, IncludeNum, IncludeSym);

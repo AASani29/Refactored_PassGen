@@ -9,6 +9,8 @@ public class Password {
     }
 
     public int CharType(char C) {
+        // Violates Single Responsibility Principle
+        // This method belongs to a separate utility class.
         int val;
 
         // Char is Uppercase Letter

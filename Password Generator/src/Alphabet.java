@@ -11,8 +11,11 @@ public class Alphabet {
 	private final StringBuilder pool;
 
 
+
 	public Alphabet(boolean uppercaseIncluded, boolean lowercaseIncluded, boolean numbersIncluded, boolean specialCharactersIncluded) {
-		
+		// Violates Single Responsibility Principle
+		// This class now handles both character sets and their inclusion criteria.
+		// Should be split into separate classes.
 		pool = new StringBuilder();
 		
 		if (uppercaseIncluded) pool.append(UPPERCASE_LETTERS);
